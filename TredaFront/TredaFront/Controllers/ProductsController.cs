@@ -11,41 +11,41 @@ using TredaFront.Models;
 
 namespace TredaFront.Controllers
 {
-    public class StoresController : Controller
+    public class ProductsController : Controller
     {
-        // GET: Stores
+        // GET: Products
         [HttpGet]
-        public ActionResult IndexS()
+        public ActionResult IndexP()
         {
             return View();
         }
 
-        public async Task<JsonResult> StoresJson()
+        public async Task<JsonResult> ProductsJson()
         {
-            List<Stores> countries = new List<Stores>();
+            List<Products> countries = new List<Products>();
             var httpClient = new HttpClient();
-            var response = await httpClient.GetAsync("https://localhost:44395/api/Stores");
+            var response = await httpClient.GetAsync("https://localhost:44395/api/Products");
             string apiResponse = await response.Content.ReadAsStringAsync();
-            countries = JsonConvert.DeserializeObject<List<Stores>>(apiResponse);
+            countries = JsonConvert.DeserializeObject<List<Products>>(apiResponse);
 
             return Json(countries, JsonRequestBehavior.AllowGet);
 
         }
 
-        public ViewResult AddStore() => View();
+        public ViewResult AddProducts() => View();
         [AcceptVerbs(HttpVerbs.Post)]
         [HttpPost]
-        public async Task<ActionResult> AddStore(Stores store)
+        public async Task<ActionResult> AddProducts(Products products)
         {
-            Stores stores = new Stores();
+            Products product = new Products();
             using (var httpClient = new HttpClient())
             {
-                StringContent content = new StringContent(JsonConvert.SerializeObject(store), Encoding.UTF8, "application/json");
+                StringContent content = new StringContent(JsonConvert.SerializeObject(products), Encoding.UTF8, "application/json");
 
-                using (var response = await httpClient.PostAsync("https://localhost:44395/api/Stores", content))
+                using (var response = await httpClient.PostAsync("https://localhost:44395/api/Products", content))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
-                    stores = JsonConvert.DeserializeObject<Stores>(apiResponse);
+                    product = JsonConvert.DeserializeObject<Products>(apiResponse);
                 }
             }
             return RedirectToAction("IndexS");
@@ -53,85 +53,85 @@ namespace TredaFront.Controllers
 
         public ActionResult Delete(int id)
         {
-        Stores store = null;
+            Products pro = null;
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("https://localhost:44395/");
 
-                var responseTask = client.GetAsync("api/Stores/" + id.ToString());
+                var responseTask = client.GetAsync("api/Products/" + id.ToString());
                 responseTask.Wait();
                 var result = responseTask.Result;
                 if (result.IsSuccessStatusCode)
                 {
 
-                    var readTask = result.Content.ReadAsAsync<Stores>();
+                    var readTask = result.Content.ReadAsAsync<Products>();
                     readTask.Wait();
-                    store = readTask.Result;
+                    pro = readTask.Result;
                 }
 
 
             }
-            return View(store);
+            return View(pro);
         }
 
         [HttpPost]
-        public ActionResult Delete(Stores store, int id)
+        public ActionResult Delete(Products pro, int id)
         {
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("https://localhost:44395/");
 
-                var deleteTask = client.DeleteAsync($"api/Stores/" + id.ToString());
+                var deleteTask = client.DeleteAsync($"api/Products/" + id.ToString());
                 deleteTask.Wait();
                 var result = deleteTask.Result;
                 if (result.IsSuccessStatusCode)
                 {
-                    return RedirectToAction("IndexS");
+                    return RedirectToAction("IndexP");
                 }
             }
-            return RedirectToAction("IndexS");
+            return RedirectToAction("IndexP");
         }
 
         public ActionResult Edit(int id)
         {
-            Stores store = null;
+            Products pro = null;
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("https://localhost:44395/");
 
-                var responseTask = client.GetAsync("api/Stores/" + id);
+                var responseTask = client.GetAsync("api/Products/" + id);
                 responseTask.Wait();
                 var result = responseTask.Result;
                 if (result.IsSuccessStatusCode)
                 {
 
-                    var readTask = result.Content.ReadAsAsync<Stores>();
+                    var readTask = result.Content.ReadAsAsync<Products>();
                     readTask.Wait();
-                    store = readTask.Result;
+                    pro = readTask.Result;
                 }
 
 
             }
-            return View(store);
+            return View(pro);
         }
 
         [HttpPost]
-        public ActionResult Edit(Stores store, int id)
+        public ActionResult Edit(Products pro, int id)
         {
 
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("https://localhost:44395/");
 
-                var putTask = client.PutAsJsonAsync($"api/Stores/{store.StoreId}", store);
+                var putTask = client.PutAsJsonAsync($"api/Products/{pro.SKU}", pro);
                 putTask.Wait();
                 var result = putTask.Result;
                 if (result.IsSuccessStatusCode)
                 {
-                    return RedirectToAction("IndexS");
+                    return RedirectToAction("IndexP");
                 }
             }
-            return RedirectToAction("IndexS");
+            return RedirectToAction("IndexP");
         }
     }
 }

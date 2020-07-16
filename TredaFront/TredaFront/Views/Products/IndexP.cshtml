@@ -1,0 +1,52 @@
+﻿<link href="~/Content/jquery.dataTables.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.dataTables.min.js"></script>
+
+<br />
+
+<h5 align="center">List Products</h5>
+
+<p>@Html.ActionLink("Add Store", "AddProducts")</p>
+
+<script>
+    $(document).ready(function () {
+        $.getJSON("ProductsJson", function (json) {
+
+            var txt = "Delete";
+            var txtD = "Edit Store";
+
+            var tr;
+
+            for (var i = 0; i < json.length; i++) {
+                tr = $('<tr/>');
+                tr.append("<td>" + json[i].SKU + "</td>");
+                tr.append("<td>" + json[i].ProductName + "</td>");
+                tr.append("<td>" + json[i].Value + "</td>");
+                tr.append("<td>" + json[i].Store + "</td>");
+                tr.append("<td>" + txt.link("http://localhost:51402/Products/Delete/" + json[i].SKU) + "</td>");
+                tr.append("<td>" + txtD.link("http://localhost:51402/Products/Edit/" + json[i].SKU) + "</td>");
+                $('table').append(tr);
+            }
+            $('#Products').DataTable({
+                "lengthMenu": [[6, 10, 25, 50, -1], [6, 10, 25, 50, "All"]]
+            });
+        });
+
+    });
+</script>
+
+<hr />
+<div class="form-horizontal">
+    <table id="Products" class="table table-bordered  table-hover">
+        <thead>
+            <tr>
+                <th>SKU</th>
+                <th>Product Name</th>
+                <th>Value</th>
+                <th>Store</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
