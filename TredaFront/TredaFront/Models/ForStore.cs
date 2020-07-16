@@ -6,7 +6,7 @@ using System.Web;
 
 namespace TredaFront.Models
 {
-    public class Products
+    public class ForStore
     {
         [Display(Name = "SKU")]
         public int SKU { get; set; }
@@ -16,9 +16,6 @@ namespace TredaFront.Models
 
         [Display(Name = "Value")]
         public decimal Value { get; set; }
-
-        [Display(Name = "Store")]
-        public int Store { get; set; }
 
         [Display(Name = "Base 64 Imagen")]
         public string Base64Imagen { get; set; }

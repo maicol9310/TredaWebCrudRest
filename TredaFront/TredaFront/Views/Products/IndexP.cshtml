@@ -22,11 +22,13 @@
                 tr.append("<td>" + json[i].ProductName + "</td>");
                 tr.append("<td>" + json[i].Value + "</td>");
                 tr.append("<td>" + json[i].Store + "</td>");
+                tr.append("<td>" + json[i].Base64Imagen + "</td>");
                 tr.append("<td>" + txt.link("http://localhost:51402/Products/Delete/" + json[i].SKU) + "</td>");
                 tr.append("<td>" + txtD.link("http://localhost:51402/Products/Edit/" + json[i].SKU) + "</td>");
                 $('table').append(tr);
             }
             $('#Products').DataTable({
+
                 "lengthMenu": [[6, 10, 25, 50, -1], [6, 10, 25, 50, "All"]]
             });
         });
@@ -43,6 +45,7 @@
                 <th>Product Name</th>
                 <th>Value</th>
                 <th>Store</th>
+                <th>Base 64 Imagen</th>
                 <th></th>
                 <th></th>
             </tr>
