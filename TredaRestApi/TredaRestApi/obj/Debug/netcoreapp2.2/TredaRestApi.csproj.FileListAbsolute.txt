@@ -1,0 +1,14 @@
+C:\Users\Oscar Pérez\Desktop\Treda\TredaWebCrudRest\TredaRestApi\TredaRestApi\bin\Debug\netcoreapp2.2\TredaRestApi.deps.json
+C:\Users\Oscar Pérez\Desktop\Treda\TredaWebCrudRest\TredaRestApi\TredaRestApi\bin\Debug\netcoreapp2.2\TredaRestApi.runtimeconfig.json
+C:\Users\Oscar Pérez\Desktop\Treda\TredaWebCrudRest\TredaRestApi\TredaRestApi\bin\Debug\netcoreapp2.2\TredaRestApi.runtimeconfig.dev.json
+C:\Users\Oscar Pérez\Desktop\Treda\TredaWebCrudRest\TredaRestApi\TredaRestApi\bin\Debug\netcoreapp2.2\TredaRestApi.dll
+C:\Users\Oscar Pérez\Desktop\Treda\TredaWebCrudRest\TredaRestApi\TredaRestApi\obj\Debug\netcoreapp2.2\TredaRestApi.csproj.CoreCompileInputs.cache
+C:\Users\Oscar Pérez\Desktop\Treda\TredaWebCrudRest\TredaRestApi\TredaRestApi\obj\Debug\netcoreapp2.2\TredaRestApi.RazorAssemblyInfo.cache
+C:\Users\Oscar Pérez\Desktop\Treda\TredaWebCrudRest\TredaRestApi\TredaRestApi\obj\Debug\netcoreapp2.2\TredaRestApi.RazorAssemblyInfo.cs
+C:\Users\Oscar Pérez\Desktop\Treda\TredaWebCrudRest\TredaRestApi\TredaRestApi\obj\Debug\netcoreapp2.2\TredaRestApi.AssemblyInfoInputs.cache
+C:\Users\Oscar Pérez\Desktop\Treda\TredaWebCrudRest\TredaRestApi\TredaRestApi\obj\Debug\netcoreapp2.2\TredaRestApi.AssemblyInfo.cs
+C:\Users\Oscar Pérez\Desktop\Treda\TredaWebCrudRest\TredaRestApi\TredaRestApi\obj\Debug\netcoreapp2.2\TredaRestApi.RazorTargetAssemblyInfo.cache
+C:\Users\Oscar Pérez\Desktop\Treda\TredaWebCrudRest\TredaRestApi\TredaRestApi\bin\Debug\netcoreapp2.2\TredaRestApi.pdb
+C:\Users\Oscar Pérez\Desktop\Treda\TredaWebCrudRest\TredaRestApi\TredaRestApi\obj\Debug\netcoreapp2.2\TredaRestApi.dll
+C:\Users\Oscar Pérez\Desktop\Treda\TredaWebCrudRest\TredaRestApi\TredaRestApi\obj\Debug\netcoreapp2.2\TredaRestApi.pdb
+C:\Users\Oscar Pérez\Desktop\Treda\TredaWebCrudRest\TredaRestApi\TredaRestApi\obj\Debug\netcoreapp2.2\TredaRestApi.csprojAssemblyReference.cache
